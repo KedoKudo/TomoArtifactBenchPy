@@ -1,0 +1,3 @@
+[submodule "LIDIA-denoiser"]
+	path = LIDIA-denoiser
+	url = git@github.com:grishavak/LIDIA-denoiser.git

@@ -1,0 +1,35 @@
+name: tabpy
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  # base
+  - python
+  - versioningit
+  # compute
+  # - tomopy  # this has to be installed manually to avoid conflicts with pytorch
+  # io
+  - imageio
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  # jupyter
+  - jupyterlab
+  - matplotlib
+  - ipympl
+  # utils:
+  - pre-commit
+  # pacakge building:
+  - boa
+  - conda-build < 4  # conda-build 24.x has a bug, missing update_index from conda_build.index
+  - conda-verify
+  - python-build
+  # test: list all test dependencies here
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  #
+  - pip
+  - pip:
+    - bm3d-streak-removal

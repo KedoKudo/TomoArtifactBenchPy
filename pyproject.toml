@@ -1,5 +1,5 @@
 [project]
-name = "tabpy"
+name = "ntabpy"
 description = "Helper pacakge for evaluate different ring artifact correction methods"
 dynamic = ["version"]
 requires-python = ">=3.10"
@@ -32,7 +32,7 @@ dirty = "{version}+d{build_date:%Y%m%d}"
 distance-dirty = "{next_version}.dev{distance}+d{build_date:%Y%m%d%H%M}"
 
 [tool.versioningit.write]
-file = "src/tabpy/_version.py"
+file = "src/ntabpy/_version.py"
 
 [tool.setuptools.packages.find]
 where = ["src"]

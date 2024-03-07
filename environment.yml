@@ -1,4 +1,4 @@
-name: tabpy
+name: ntabpy
 channels:
   - pytorch
   - nvidia

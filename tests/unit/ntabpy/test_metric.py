@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import pytest
 import numpy as np
-from tabpy.metric import calc_psnr
+from ntabpy.metric import calc_psnr
 
 
 @pytest.mark.parametrize(

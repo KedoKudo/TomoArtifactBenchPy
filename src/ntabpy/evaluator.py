@@ -3,7 +3,7 @@
 import tomopy
 import numpy as np
 import matplotlib.pyplot as plt
-from tabpy.synthetic import generate_sinogram, simulate_detector_gain_error
+from ntabpy.synthetic import generate_sinogram, simulate_detector_gain_error
 from typing import Tuple
 
 

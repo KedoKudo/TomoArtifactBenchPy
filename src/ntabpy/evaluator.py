@@ -54,7 +54,7 @@ def tomo_round_trip_2d(
     detector_gain_range: Tuple[float, float] = (0.9, 1.1),
     detector_gain_error: float = 0.1,
     show_plot: bool = True,
-) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     Perform a round trip tomography simulation on a 2D image.
 
@@ -69,15 +69,15 @@ def tomo_round_trip_2d(
 
     Returns
     -------
-    Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]
-        The sinogram, reconstruction, gain, and reconstruction of gain.
+    Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]
+        The sinogram, reconstruction, gain, reconstruction of gain, and the original sinogram.
 
     Example
     -------
     >>> img = np.random.rand(256, 256)
-    >>> sinogram, recon, gain, recon_gain = tomo_round_trip_2d(img, 1)
-    >>> print(sinogram.shape, recon.shape, gain.shape, recon_gain.shape)
-    (360, 256) (256, 256) (360, 256) (256, 256)
+    >>> sinogram, recon, gain, recon_gain, sino_org = tomo_round_trip_2d(img, 1)
+    >>> print(sinogram.shape, recon.shape, gain.shape, recon_gain.shape, sino_org)
+    (360, 256) (256, 256) (360, 256) (256, 256) (360, 256)
     """
     # generate sinogram
     sinogram_org, thetas_deg = generate_sinogram(input_img, scan_step)
@@ -122,4 +122,4 @@ def tomo_round_trip_2d(
         print("Gain Error: ", detector_gain.min(), detector_gain.max())
         print("Reconstruction of Gain Error: ", recon_gain.min(), recon_gain.max())
 
-    return sinogram, recon_sino, detector_gain, recon_gain
+    return sinogram, recon_sino, detector_gain, recon_gain, sinogram_org

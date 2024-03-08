@@ -271,3 +271,4 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,windows,macos,linux,visualstudiocode
 src/ntabpy/_version.py
+.vscode/settings.json
